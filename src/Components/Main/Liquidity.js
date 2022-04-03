@@ -136,25 +136,29 @@ function Liquidity() {
   const addLiquidity = async () => {
     try {
       const provider = new ethers.providers.Web3Provider(window.ethereum);
+      await provider.send("eth_requestAccounts", []);
+      const signer = await provider.getSigner();
+      const signerAddress = await signer.getAddress();
+      console.log(signer);
 
       const routerContract = new ethers.Contract(
         uniV2RouterAddress,
         UniV2RouterABI,
-        provider
+        signer
       );
 
-      const signer = await provider.getSigner();
       await routerContract.addLiquidity(
-        wethAddress,
         ixsAddress,
+        wethAddress,
         ixsAmount,
         ethAmount,
         ixsAmount * 0.9,
         ethAmount * 0.9,
-        signer,
+        signerAddress,
         Date.now() + 5 * 60000
       );
     } catch (error) {
+      alert("Transaction Failed");
       console.log(error);
     }
   };

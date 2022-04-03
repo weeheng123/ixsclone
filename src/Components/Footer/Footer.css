@@ -1,0 +1,28 @@
+footer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 0 3.75rem;
+}
+
+footer .container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+footer .right-div .footer-logo {
+  margin-left: 1rem;
+}
+
+footer span {
+  color: var(--accentColor);
+}
+
+footer .ixswap {
+  color: var(--primaryColor);
+}
+
+footer .underline {
+  text-decoration: underline;
+}

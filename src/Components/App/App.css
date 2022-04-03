@@ -1,0 +1,50 @@
+.container {
+  max-width: 1440px;
+  width: 100%;
+  padding: 0 3.75rem;
+  position: relative;
+}
+
+#root {
+  min-height: 100vh;
+  overflow: hidden;
+  display: grid;
+  height: 100%;
+  grid-template-rows: 1fr max-content;
+}
+
+body {
+  background: #0d0415;
+  font-family: "Poppins", "Open Sans";
+  margin: 0;
+  padding: 0;
+}
+
+.right-div {
+  display: flex;
+  align-items: center;
+}
+
+.left-div {
+  padding: 1.5rem 0;
+}
+
+.right-div:first-of-type {
+  margin-right: 2rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button {
+  overflow: visible;
+  text-transform: none;
+}
+
+html {
+  --primaryColor: #cc3180;
+  --accentColor: #fff;
+  --bgPrimary: #1d0e2c;
+  --bgSecondary: linear-gradient(90.7deg, #6237dd 0%, #e13586 100%);
+}

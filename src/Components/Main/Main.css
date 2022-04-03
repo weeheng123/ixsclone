@@ -1,0 +1,149 @@
+.main {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-top: 12rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+}
+
+.main .header {
+  color: var(--accentColor);
+  width: 100%;
+  height: 3rem;
+  border-radius: 1ch;
+  background: var(--bgSecondary);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+section.home {
+  width: 100%;
+  display: flex;
+}
+
+section .container {
+  margin: 0rem 12rem;
+}
+
+section .container .data-feed {
+  display: grid;
+  grid-gap: 1rem;
+  padding: 1rem 0rem;
+  grid-template-columns: 70% 28%;
+  grid-template-rows: 12rem;
+}
+
+.container h3 {
+  color: var(--accentColor);
+  font-size: 30px;
+  margin-left: 1rem;
+}
+
+section .container .data-feed .left-main {
+  background-color: var(--bgPrimary);
+  border-radius: 1rem;
+  padding: 2.5rem 3rem;
+  display: grid;
+  grid-template-columns: 1fr max-content 1fr;
+  grid-gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.container .data-feed .left-main .first-token h3 {
+  border-bottom: 2px solid #42266a;
+  justify-content: right;
+  width: 80%;
+  padding-bottom: 1rem;
+  margin: 0;
+}
+
+.container .data-feed h4 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: bold;
+  color: #d2c7de;
+}
+
+.container .data-feed .number {
+  color: var(--primaryColor);
+  font-size: 12px;
+  overflow: hidden;
+}
+
+.container .data-feed .left-main .second-token h3 {
+  border-bottom: 2px solid #42266a;
+  width: 80%;
+  padding-bottom: 1rem;
+  margin: 0;
+}
+
+.container .data-feed .left-main .second-token h4:first-of-type {
+  margin-top: 0.5rem;
+}
+
+.container .data-feed .left-main .first-token h4:first-of-type {
+  margin-top: 0.5rem;
+}
+
+.logo-arrow {
+  margin-bottom: 4rem;
+}
+
+.logo-arrow path {
+  fill: var(--accentColor);
+}
+
+.container .data-feed .left-main .first-token {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+}
+
+.container .data-feed .right-main {
+  background-color: #3a1451;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  padding: 2.5rem;
+  border-radius: 1rem;
+}
+
+.container .data-feed .right-main .lp-tokens {
+  padding-bottom: 0.6rem;
+}
+
+.container .add-liquidity {
+  width: 100%;
+  height: 3rem;
+  border-radius: 3ch;
+  background: var(--bgSecondary);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  border: 0;
+  cursor: pointer;
+}
+
+.container .add-liquidity h2 {
+  color: white;
+  margin-left: 1.5rem;
+}
+
+a:link {
+  text-decoration: none;
+}
+a:visited {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+a:active {
+  text-decoration: none;
+}

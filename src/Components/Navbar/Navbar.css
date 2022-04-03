@@ -1,0 +1,67 @@
+nav.nav-bar {
+  position: fixed;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  transition: background-color 1s ease;
+}
+
+nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logoUniswap {
+  fill: white;
+  margin-right: 2rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+
+.logoUniswap:hover {
+  outline: none;
+  transform: scale(1.1);
+}
+
+.wallet-container span {
+  color: white;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 25px;
+}
+
+.wallet-container svg {
+  margin-right: 0.5rem;
+}
+
+.wallet-container {
+  background-color: transparent;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transform: scale(1);
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+  max-width: 230px;
+  max-height: 110px;
+  overflow: hidden;
+}
+
+.wallet-container:hover {
+  outline: none;
+  transform: scale(1.1);
+}
+
+.wallet-container .logoWallet path {
+  fill: white;
+}
+
+.wallet-container .address {
+  max-width: 170px;
+  max-height: 110px;
+  text-overflow: ellipsis;
+}

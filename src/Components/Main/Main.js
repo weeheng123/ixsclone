@@ -86,6 +86,9 @@ function Main() {
 
       const reserves = await contract.getReserves();
 
+      console.log(reserves.reserve0);
+      console.log(reserves.reserve1);
+
       setEthPerIxs((reserves.reserve1 / reserves.reserve0).toPrecision(6));
       setIxsPerEth((reserves.reserve0 / reserves.reserve1).toPrecision(6));
     }

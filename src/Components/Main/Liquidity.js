@@ -108,7 +108,6 @@ function Liquidity() {
 
     async function getAccountTokenBalances() {
       try {
-        const provider = new ethers.providers.Web3Provider(window.ethereum);
         await provider.send("eth_requestAccounts", []);
         const ixsTokenContract = new ethers.Contract(
           ixsAddress,
@@ -137,22 +136,28 @@ function Liquidity() {
     try {
       const provider = new ethers.providers.Web3Provider(window.ethereum);
 
+      const signer = await provider.getSigner();
+      const signerAddress = await signer.getAddress();
+
       const routerContract = new ethers.Contract(
         uniV2RouterAddress,
         UniV2RouterABI,
-        provider
+        signer
       );
 
-      const signer = await provider.getSigner();
-      await routerContract.addLiquidity(
-        wethAddress,
+      var strEthAmount = String(Number(ethAmount).toFixed(16));
+      var strIxsAmount = String(Number(ixsAmount).toFixed(16));
+      var strEthSlippage = String(Number(ethAmount * 0.95).toFixed(16));
+      var strIxsSlippage = String(Number(ixsAmount * 0.95).toFixed(16));
+
+      await routerContract.addLiquidityETH(
         ixsAddress,
-        ixsAmount,
-        ethAmount,
-        ixsAmount * 0.9,
-        ethAmount * 0.9,
-        signer,
-        Date.now() + 5 * 60000
+        ethers.utils.parseEther(strIxsAmount),
+        ethers.utils.parseEther(strIxsSlippage),
+        ethers.utils.parseEther(strEthSlippage),
+        signerAddress,
+        Date.now() + 20 * 60000,
+        { value: ethers.utils.parseEther(strEthAmount) }
       );
     } catch (error) {
       console.log(error);

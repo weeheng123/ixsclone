@@ -135,7 +135,7 @@ function Liquidity() {
   const addLiquidity = async () => {
     try {
       const provider = new ethers.providers.Web3Provider(window.ethereum);
-
+      await provider.send("eth_requestAccounts", []);
       const signer = await provider.getSigner();
       const signerAddress = await signer.getAddress();
 
@@ -160,6 +160,7 @@ function Liquidity() {
         { value: ethers.utils.parseEther(strEthAmount) }
       );
     } catch (error) {
+      alert("Transaction Failed");
       console.log(error);
     }
   };
